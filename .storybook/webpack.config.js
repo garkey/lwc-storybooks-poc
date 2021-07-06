@@ -4,19 +4,17 @@ const LWCWebpackPlugin = require('lwc-webpack-plugin')
 module.exports = async ({ config, mode }) => {
     config.plugins.push(
         new LWCWebpackPlugin({
-            namespace: {
-                // LWC Namespace with path
-                lightning: path.resolve('./src/lightning'),
-                c: path.resolve('./src/c'),
-            },
             modules: [
-                "@salesforce-ux/design-system"
+                {
+                  name: 'c/avatar',
+                  path: '/home/garrick/local/dcx/dev/lwc-storybook-poc-engine-dom/src/c/avatar/avatar.js'
+                }
             ]
         })
     );
     config.module.rules = [{
         test: /\.stories\.js$/,
-        loaders: [require.resolve('@storybook/addon-storysource/loader')],
+        loaders: [require.resolve('@storybook/source-loader')],
         enforce: 'pre',
     },
     {

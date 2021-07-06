@@ -8,12 +8,12 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@lwc/compiler": "^1.0.0",
-    "@lwc/engine": "^1.0.0",
+    "@lwc/engine-dom": "^2.1.2",
     "@storybook/addon-knobs": "^5.1.11",
-    "@storybook/addon-storysource": "^5.1.11",
     "@storybook/addon-viewport": "^5.2.6",
     "@storybook/addons": "^5.1.11",
     "@storybook/html": "^5.1.11",
+    "@storybook/source-loader": "^5.2.5",
     "@types/node": "^12.0.1",
     "@types/webpack": "^4.4.31",
     "babel-loader": "^8.0.6",
@@ -24,10 +24,10 @@
   "dependencies": {
     "@salesforce-ux/design-system": "2.11.0-beta.1",
     "classnames": "^2.2.6",
-    "lwc-webpack-plugin": "^0.3.0"
+    "lwc-webpack-plugin": "^2.0.0"
   },
   "scripts": {
-    "start": "yarn storybook",
+    "start": "npm run storybook",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook"
   }
